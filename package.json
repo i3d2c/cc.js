@@ -1,0 +1,49 @@
+{
+  "name": "cc.js",
+  "version": "1.0.0",
+  "description": "Dedicated js for cc",
+  "directories": {
+    "doc": "docs",
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/suipotryot/cc.js.git"
+  },
+  "keywords": [],
+  "author": "Guillaume Dubus <guillaume1.dubus@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/suipotryot/cc.js/issues"
+  },
+  "homepage": "https://github.com/suipotryot/cc.js#readme",
+  "devDependencies": {
+    "babel-core": "^6.0.0",
+    "chai": "^4.2.0",
+    "eslint": "^5.10.0",
+    "eslint-config-google": "^0.11.0",
+    "jsdom": "^13.1.0",
+    "jsdom-global": "^3.0.2",
+    "mocha": "^5.2.0",
+    "webpack": "^4.27.1",
+    "webpack-cli": "^3.1.2",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "babel": {
+    "presets": [
+      "env"
+    ]
+  },
+  "env": {
+    "es6": true
+  },
+  "dependencies": {
+    "fabricashape": "^1.0.0"
+  },
+  "main": "src/index.js"
+}
