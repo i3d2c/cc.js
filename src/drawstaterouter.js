@@ -1,6 +1,6 @@
 import * as backbone from 'backbone';
-import {Canvas} from 'fabricashape';
-import $ from 'jquery';
+// import {Canvas} from 'fabricashape';
+// import $ from 'jquery';
 
 const TEMPLATES = {
     loadfile:
@@ -13,12 +13,11 @@ const TEMPLATES = {
 export class DrawStateRouter extends backbone.Router {
 
     constructor($actionDiv, canvas) {
-        super({ routes: {
-            'loadfile/': 'loadfile',
-            'loadfile/validate/': 'validateLoadfile'
-        }});
+        super();
         this.canvas = canvas;
         this.$actionDiv = $actionDiv;
+        this.route('loadfile/', 'loadfile');
+        this.route('loadfile/validate/', 'validateloadfile');
     }
 
     loadfile() {
@@ -26,15 +25,8 @@ export class DrawStateRouter extends backbone.Router {
         this.$actionDiv.html(TEMPLATES.loadfile);
     }
 
-    validateLoadfile() {
+    validateloadfile() {
         console.log('validateLoadfile');
     }
 
 }
-
-console.log('pouet');
-const canvas = new Canvas('example2D', {class: 'my-4 w-100'});
-const router = new DrawStateRouter($('#actions'), canvas);
-
-backbone.history.start();
-router.navigate('loadfile', {trigger: true, replace: true});
