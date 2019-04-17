@@ -5,9 +5,13 @@ const path = require('path');
 const env = require('yargs').argv.env; // use --env with webpack 2
 const pkg = require('./package.json');
 
+const exec = require('child_process').exec;
+
 let libraryName = pkg.name;
 
 let outputFile, mode;
+
+let plugins = [];
 
 if (env === 'build') {
   mode = 'production';
@@ -15,6 +19,18 @@ if (env === 'build') {
 } else {
   mode = 'development';
   outputFile = libraryName + '.js';
+  plugins = [
+    {
+      apply: (compiler) => {
+        compiler.hooks.afterEmit.tap('AfterEmitPlugin', (compilation) => {
+          exec('cp lib/cc-js.js ../cc/drawandlist/static/drawandlist/cc-js.js', (err, stdout, stderr) => {
+            if (stdout) process.stdout.write(stdout);
+            if (stderr) process.stderr.write(stderr);
+          });
+        });
+      }
+    }
+  ]
 }
 
 const config = {
@@ -46,7 +62,8 @@ const config = {
   resolve: {
     modules: [path.resolve('./node_modules'), path.resolve('./src')],
     extensions: ['.json', '.js']
-  }
+  },
+  plugins: plugins
 };
 
 module.exports = config;
