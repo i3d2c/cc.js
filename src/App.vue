@@ -8,7 +8,7 @@
       </ul>
     </div>
 
-    <router-view class="row"/>
+    <router-view/>
 
   </div>
 </template>
@@ -30,21 +30,4 @@ export default {
 </script>
 
 <style>
-/* Style the file upload utility */
-#fileupload-form {
-    display:block;
-    margin:auto;
-    text-align:center;
-    line-height: 20em;
-    border: 1px solid rgb(170, 170, 170);
-}
-
-#fileupload {
-    font-size: 1em;
-}
-
-/* Style the canvas */
-#canvas2d {
-    border: 1px solid rgb(170, 170, 170);
-}
 </style>

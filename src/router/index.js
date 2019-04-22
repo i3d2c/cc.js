@@ -1,7 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 
+import Canvas from '@/components/Canvas'
 import AddImageFile from '@/components/AddImageFile'
+import AddScale from '@/components/AddScale'
 
 Vue.use(Router)
 
@@ -9,23 +11,24 @@ export default new Router({
   routes: [
     {
       path: '/',
-      name: 'new_project',
-      component: AddImageFile
+      redirect: { name: 'add_image' }
     },
     {
-      path: '/addImageFile',
-      name: 'add_image',
-      component: AddImageFile
+      path: '/canvas',
+      name: 'canvas',
+      component: Canvas,
+      children: [
+        {
+          path: '/canvas/addImageFile',
+          name: 'add_image',
+          component: AddImageFile
+        },
+        {
+          path: '/canvas/addScale',
+          name: 'add_scale',
+          component: AddScale
+        }
+      ]
     }
-    // {
-    //   path: '/addImageFile/validate/',
-    //   name: 'validate_image',
-    //   component: ValidateImageFile
-    // },
-    // {
-    //   path: '/addScale/',
-    //   name: 'add_scale',
-    //   component: AddScale
-    // }
   ]
 })
