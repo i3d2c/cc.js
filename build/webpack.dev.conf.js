@@ -44,6 +44,10 @@ const devWebpackConfig = merge(baseWebpackConfig, {
       poll: config.dev.poll,
     }
   },
+  output: {
+    path: config.build.assetsRoot,
+    filename: utils.assetsPath('js/cc-js.js'),
+  },
   plugins: [
     new webpack.DefinePlugin({
       'process.env': require('../config/dev.env')

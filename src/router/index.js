@@ -4,6 +4,7 @@ import Router from 'vue-router'
 import Canvas from '@/components/Canvas'
 import AddImageFile from '@/components/AddImageFile'
 import AddScale from '@/components/AddScale'
+import Edit from '@/components/Edit'
 
 Vue.use(Router)
 
@@ -27,6 +28,11 @@ export default new Router({
           path: '/canvas/addScale',
           name: 'add_scale',
           component: AddScale
+        },
+        {
+          path: '/canvas/edit',
+          name: 'edit',
+          component: Edit
         }
       ]
     }

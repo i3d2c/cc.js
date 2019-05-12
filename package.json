@@ -15,9 +15,11 @@
   },
   "dependencies": {
     "bootstrap": "^4.3.1",
-    "bootstrap-vue": "^2.0.0-rc.18",
-    "fabricashape": "^1.0.2",
-    "jquery": "^3.4.0",
+    "bootstrap-colorpicker": "^3.1.1",
+    "bootstrap-vue": "^2.0.0-rc.19",
+    "fabricashape": "../fabricashape",
+    "jquery": "^3.4.1",
+    "localforage": "^1.7.3",
     "vue": "^2.5.2",
     "vue-router": "^3.0.1"
   },

@@ -31,8 +31,8 @@ export default {
 
   methods: {
     validateScale: function (event) {
-      this.$parent.canvas2d.lockImage()
       this.$parent.canvas2d.setScale({shape: this.arrowline, value: this.scaleValue})
+      this.$router.push({ name: 'edit' })
     }
   },
 
