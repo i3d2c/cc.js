@@ -21,20 +21,22 @@ export default {
   },
   mounted () {
     this.canvas2d = new Canvas(this.$refs.canvas2d, {class: 'my-4 w-100'})
+
     localforage.getItem('canvas-json')
       .then((json) => {
-        console.log(json)
         this.canvas2d.loadFromJSON(json, () => {
           this.canvas2d.renderAll()
           return Promise.resolve()
         })
       }).catch((error) => {
-        console.log('biche')
         console.log(error)
       })
       .then(() => {
         this.canvas2d.on('object:modified', () => {
-          localforage.setItem('canvas-json', this.canvas2d.toJSON())
+          localforage.setItem('canvas-json', this.canvas2d.toJSON(['hasControls', 'selectable']))
+        })
+        this.canvas2d.on('object:added', () => {
+          localforage.setItem('canvas-json', this.canvas2d.toJSON(['hasControls', 'selectable']))
         })
       })
   }

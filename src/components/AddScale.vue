@@ -14,7 +14,7 @@
 import {Arrowline} from 'fabricashape'
 
 export default {
-  name: 'add_image',
+  name: 'add_scale',
   data: function () {
     return {
       scaleValue: 0,
@@ -24,6 +24,7 @@ export default {
 
   mounted: function () {
     this.$nextTick(function () {
+      this.$parent.canvas2d.clearScale()
       this.$parent.canvas2d.add(this.arrowline)
       this.$parent.canvas2d.renderAll()
     })

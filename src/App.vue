@@ -1,12 +1,5 @@
 <template>
   <div class="container">
-    <div class="row">
-      <ul class="nav">
-        <li class="nav-item">
-          <a class="nav-link active" href="#">Dessin, 3D & Liste</a>
-        </li>
-      </ul>
-    </div>
 
     <router-view/>
 
