@@ -18,7 +18,7 @@
     "bootstrap-colorpicker": "^3.2.0",
     "bootstrap-vue": "^2.5.0",
     "fabricashape": "../fabricashape",
-    "jquery": "^3.4.1",
+    "jquery": "^3.5.0",
     "localforage": "^1.7.3",
     "vue": "^2.6.11",
     "vue-router": "^3.1.6"
